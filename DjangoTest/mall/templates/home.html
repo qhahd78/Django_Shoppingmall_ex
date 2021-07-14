@@ -7,6 +7,31 @@
     <title>쇼핑몰</title>
 </head>
 <body>
-    메인
+    <header>
+        {% if user.is_authenticated %}
+            <p>안녕하세요 {{ user.username }} 님! </p>
+            <a href="{% url 'user_logout'%}">로그아웃</a>
+            <a href="{% url 'mypage'%}">내 정보</a>
+            <a href="{% url 'order_list'%}">주문 목록</a>
+            {% if user.is_superuser %}
+                <a href="{% url 'create'%}">상품 등록</a>
+            {% endif %}
+        
+        {% else %}
+            <a href="{% url 'user_signup'%}">회원가입</a>
+            <a href="{% url 'user_login'%}">로그인</a>
+        {% endif %}
+    </header>
+    <main>
+        <div>
+            {% for product in products %}
+                <a href="{% url 'detail' product.id %}">
+                    <img src="{{ product.product_img.url }}" width="300px" height="300px">
+                    <p>{{product.product_name}}</p>
+                    <p>{{product.product_info}}</p>
+                </a>
+            {% endfor %}
+        </div>
+    </main>
 </body>
 </html>

@@ -7,6 +7,14 @@
     <title>Signup</title>
 </head>
 <body>
-    signup
+    <form method="POST" action="{% url 'user_signup' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input name="profile_img" type="file"><br>
+        <input name="username" placeholder="아이디를 입력해주세요." type="text"><br>
+        <input name="password" placeholder="비밀번호를 입력해주세요." type="password"><br>
+        <input name="password2" placeholder="비밀번호를 다시 입력해주세요." type="password"><br>
+        <input name="university" placeholder="재학 중인 대학교를 입력해주세요." type="text"><br>
+        <button>Signup</button>
+    </form>
 </body>
 </html>

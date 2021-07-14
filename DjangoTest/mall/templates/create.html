@@ -7,6 +7,12 @@
     <title>create</title>
 </head>
 <body>
-    create
+    <form method="POST" action="{% url 'create' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input name="product_img" type="file">
+        <input name="product_name" type="text" placeholder="상품 명을 입력해주세요. ">
+        <input name="product_info" type="text" placeholder="상품에 대한 설명을 입력해주세요. ">
+        <button>상품 등록</button>
+    </form>
 </body>
 </html>

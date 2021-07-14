@@ -7,6 +7,11 @@
     <title>Login</title>
 </head>
 <body>
-    login
+    <form method="POST" action="{% url 'user_login' %}">
+        {% csrf_token %}
+        <input name="username" placeholder="아이디를 입력해주세요." type="text"><br>
+        <input name="password" placeholder="비밀번호를 입력해주세요." type="password"><br>
+        <button>Login</button>
+    </form>
 </body>
 </html>
