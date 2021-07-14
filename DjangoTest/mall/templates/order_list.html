@@ -8,8 +8,7 @@
 </head>
 <body>
     <h3>주문 목록</h3>
-    {% for product in product_list %}
-    {{product}}
+    {% for product in result %}
     <p><img src = "{{ product.product_img.url }}" width="300px" height="300px"></p>
     <p>상품명 : {{product.product_name}}</p> 
     <p>상품 설명 : {{product.product_info}} </p>

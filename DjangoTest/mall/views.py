@@ -45,21 +45,25 @@ def order(request, id) :
     # 새로운 order 채우기 
     new_order.order_user = user
     new_order.order_product = product
-    # 상품 객체 저장 
+    # order 객체 저장 
     new_order.save() 
     return redirect('home')
 
+# 내 주문 내역 함수 
 def order_list(request) : 
     # Order 객체 전부 가져오기 
     list = Order.objects.all()
+    # product 객체 전부 가져오기
+    products = Product.objects.all()
     # 이 유저에 해당하는 객체만 list 에 저장. 
     list = list.filter(order_user = request.user.id)
-    # 모든 상품 객체 가져오기 
-    products = Product.objects.all()
-    # for 문을 돌면서 이 유저가 가지고 있는 상품만 return 
-    for user_product in list : 
-        for product in products : 
-            if user_product == product : 
-                print(product.product_name)
-    # product_list = list.filter(order_product = request.user.id)
-    return render(request, 'order_list.html')
+    # for 문을 돌면서 이 유저가 가지고 있는 상품 result 에 저장 후 return
+    result = []
+
+    for i in list : 
+        for j in products : 
+            # 상품명으로 비교
+            if str(i) == str(j) : 
+                result.append(j)
+                
+    return render(request, 'order_list.html', {'result':result})
