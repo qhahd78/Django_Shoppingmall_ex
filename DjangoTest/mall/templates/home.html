@@ -1,27 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>쇼핑몰</title>
-</head>
-<body>
-    <header>
-        {% if user.is_authenticated %}
-            <p>안녕하세요 {{ user.username }} 님! </p>
-            <a href="{% url 'user_logout'%}">로그아웃</a>
-            <a href="{% url 'mypage'%}">내 정보</a>
-            <a href="{% url 'order_list'%}">주문 목록</a>
-            {% if user.is_superuser %}
-                <a href="{% url 'create'%}">상품 등록</a>
-            {% endif %}
-        
-        {% else %}
-            <a href="{% url 'user_signup'%}">회원가입</a>
-            <a href="{% url 'user_login'%}">로그인</a>
-        {% endif %}
-    </header>
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}Main{% endblock %}
+    {% block content %}
     <main>
         <div>
             {% for product in products %}
@@ -33,5 +15,4 @@
             {% endfor %}
         </div>
     </main>
-</body>
-</html>
+    {% endblock %}

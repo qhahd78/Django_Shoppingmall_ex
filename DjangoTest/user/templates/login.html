@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+{% block content %}
     <form method="POST" action="{% url 'user_login' %}">
         {% csrf_token %}
         <input name="username" placeholder="아이디를 입력해주세요." type="text"><br>
         <input name="password" placeholder="비밀번호를 입력해주세요." type="password"><br>
         <button>Login</button>
     </form>
-</body>
-</html>
+{% endblock %}

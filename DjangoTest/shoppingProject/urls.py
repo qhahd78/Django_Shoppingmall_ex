@@ -15,22 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls.conf import include
 from django.conf import settings
 from django.conf.urls.static import static
 from mall import views as M 
-from user import views as U
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', M.home, name="home"),
-    path('mall/create', M.create, name="create"),
-    path('mall/detail/<str:id>', M.detail, name="detail"),
-    path('mall/update', M.update, name="update"),
-    path('mall/delete/<str:id>', M.delete, name="delete"),
-    path('mall/order/<str:id>', M.order, name="order"),
-    path('mall/order_list', M.order_list, name="order_list"),
-    path('user/user_login', U.user_login, name="user_login"),
-    path("user/user_signup", U.user_signup, name="user_signup"),
-    path("user/user_logout", U.user_logout, name="user_logout"),
-    path("user/mypage", U.mypage, name="mypage"),
+    path('mall/', include('mall.urls')),
+    path('user/', include('user.urls')),
 ] + static (settings.MEDIA_URL, document_root  = settings.MEDIA_ROOT)

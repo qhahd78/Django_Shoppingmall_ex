@@ -21,19 +21,31 @@ def create(request) :
     else : 
         return render(request, 'create.html')
 
+# 상품 상세 
 def detail(request, id):
     product = get_object_or_404(Product, id = id)
     return render(request, 'detail.html', {'product' : product})
 
-def update(request):
-    return render(request, 'update.html')
+# 상품 수정
+def update(request, id):
+    if request.method == "POST" : 
+        update_product = Product.objects.get(id = id)
+        update_product.product_name = request.POST["product_name"]
+        update_product.product_info = request.POST["product_info"]
+        update_product.product_img = request.FILES.get('product_img')
+        update_product.save()
+        return redirect('detail', update_product.id)
+    else : 
+        product = Product.objects.get(id = id )
+        return render(request, 'update.html', {'product' : product})
 
+# 상품 삭제 
 def delete(request, id) : 
     delete_product = Product.objects.get(id = id)
     delete_product.delete()
     return redirect('home')
 
-# 주문하기 버튼 누르면 이 함수가 실행 . 
+# 주문 목록에 넣기 
 def order(request, id) : 
     # 해당 product 객체를 가져온다.
     product = get_object_or_404(Product, id = id)
@@ -49,7 +61,7 @@ def order(request, id) :
     new_order.save() 
     return redirect('home')
 
-# 내 주문 내역 함수 
+# 내 주문 내역 
 def order_list(request) : 
     # Order 객체 전부 가져오기 
     list = Order.objects.all()

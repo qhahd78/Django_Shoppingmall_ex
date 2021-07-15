@@ -7,6 +7,12 @@
     <title>Update</title>
 </head>
 <body>
-    update
+    <form method="POST" action="{% url 'update' product.id %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input name="product_img" type="file" value="{{product.product_img}}">
+        <input name="product_name" type="text" value="{{product.product_name}}">
+        <input name="product_info" type="text" value="{{product.product_info}}">
+        <button>상품 등록</button>
+    </form>
 </body>
 </html>
