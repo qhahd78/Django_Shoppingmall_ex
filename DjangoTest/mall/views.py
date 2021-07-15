@@ -59,7 +59,7 @@ def order(request, id) :
     new_order.order_product = product
     # order 객체 저장 
     new_order.save() 
-    return redirect('home')
+    return redirect('order_finished')
 
 # 내 주문 내역 
 def order_list(request) : 
@@ -79,3 +79,7 @@ def order_list(request) :
                 result.append(j)
                 
     return render(request, 'order_list.html', {'result':result})
+
+# 주문 완료 페이지 
+def order_finished(request) : 
+    return render(request, 'order_finished.html')

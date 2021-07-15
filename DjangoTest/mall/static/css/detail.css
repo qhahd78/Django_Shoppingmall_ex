@@ -1,0 +1,79 @@
+#main{
+    display: flex;
+    align-items: center;
+    height: 80%;
+}
+
+#detail-div{
+    margin: 0 auto;
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+}
+
+#product-name{
+    font-family: 'paybooc-Bold';
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+#product-info{
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+
+}
+
+/* 주문하기 버튼  */
+#order-btn{
+    background-color: black;
+    border : 1px solid black;
+    font-family: 'paybooc-Medium';
+    color: white;
+    font-size: 1.2rem;
+    width: 100px;
+    height: 50px;
+}
+
+#order-btn:hover{
+    cursor:pointer;
+    border : 2px solid black;
+    transition: .3s;
+    color: black;
+    background-color: white;
+}
+
+#edit-btn{
+    background-color: white;
+    border: 2px solid black;
+    font-family: 'paybooc-Medium';
+    color: black;
+    font-size: 1.2rem;
+    width: 100px;
+    height: 50px;
+}
+
+#edit-btn:hover{
+    cursor:pointer;
+    border : none;
+    transition: .3s;
+    color: white;
+    background-color: cornflowerblue;
+}
+
+#del-btn{
+    background-color: white;
+    border: 2px solid black;
+    font-family: 'paybooc-Medium';
+    color: black;
+    font-size: 1.2rem;
+    width: 100px;
+    height: 50px;
+}
+
+#del-btn:hover{
+    cursor:pointer;
+    border : none;
+    transition: .3s;
+    color: white;
+    background-color: rgb(170, 23, 23);
+}

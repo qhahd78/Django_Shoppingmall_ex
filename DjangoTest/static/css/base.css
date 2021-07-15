@@ -1,4 +1,98 @@
-.header { 
-    display: flex;
-    background-color: black;
+/* 라이트  */
+@font-face {
+    font-family: 'paybooc-Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
+
+/* 미디움 */
+@font-face {
+    font-family: 'paybooc-Medium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 볼드 */
+@font-face {
+    font-family: 'paybooc-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html{
+    height: 100%;
+    font-family: 'paybooc-Light';
+    font-size: 15px;
+}
+
+body{
+    height: 100%;
+}
+
+header{
+    font-family: 'paybooc-Bold';
+    font-size: 1.2rem;
+}
+
+#header { 
+    top: 0;
+    height: 70px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 12px rgb(231, 231, 231);
+}
+
+a:visited{
+    color: black;
+}
+
+a:link{
+    color: black;
+    text-decoration: none;
+}
+
+/* 상품등록버튼 */
+#admin_button{
+    width: 100px;
+}
+
+/* 로그인 했을 때  */
+/* 버튼 레이아웃 */
+.user_button{
+    display: flex;
+    justify-content: space-around;
+}
+
+/* 버튼들 설정  */
+.user_button > a > p {
+    width: 100px;
+    font-family: 'paybooc-Light';
+    text-align: center;
+}
+
+.user_button > a > p:hover{
+    color: rgb(112, 170, 24);
+    transition: .3s;
+}
+
+/* 인사 문구  */
+.user_button > p {
+    width: 250px;
+    text-align: center;
+}
+
+/* 로그인 안 했을 때  */
+.user_non_button{
+    display: flex;
+}
+
+.user_non_button > a > p{
+    width: 100px;
+    font-family: 'paybooc-Light';
+}
+

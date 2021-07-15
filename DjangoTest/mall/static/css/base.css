@@ -23,8 +23,13 @@
 }
 
 html{
+    height: 100%;
     font-family: 'paybooc-Light';
     font-size: 15px;
+}
+
+body{
+    height: 100%;
 }
 
 header{
@@ -34,9 +39,12 @@ header{
 
 #header { 
     top: 0;
+    height: 70px;
     padding: 0 20px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 12px rgb(231, 231, 231);
 }
 
 a:visited{
@@ -68,8 +76,8 @@ a:link{
 }
 
 .user_button > a > p:hover{
-    color: rgb(112, 170, 24);
-    transition: .3s;
+    font-family: 'paybooc-Bold';   
+    transition: .9s;
 }
 
 /* 인사 문구  */
