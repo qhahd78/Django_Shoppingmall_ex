@@ -67,9 +67,14 @@ def order_list(request) :
     list = Order.objects.all()
     # product 객체 전부 가져오기
     products = Product.objects.all()
+
+    ### 해당 유저의 주문 내역을 반환하는 과정 ###
+    
     # 이 유저에 해당하는 객체만 list 에 저장. 
     list = list.filter(order_user = request.user.id)
+
     # for 문을 돌면서 이 유저가 가지고 있는 상품 result 에 저장 후 return
+    # 이렇게 해야 order_list 에서 product 의 상세정보로 연결됨. 
     result = []
 
     for i in list : 

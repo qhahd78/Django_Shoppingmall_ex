@@ -9,7 +9,7 @@ class Product(models.Model) :
 
     def __str__(self) : 
         return self.product_name
-
+# 코멘트는 구현 x 
 class Comment(models.Model) : 
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     writer = models.ForeignKey('user.User',on_delete=models.CASCADE)
