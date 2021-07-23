@@ -1,4 +1,4 @@
-# Django_Shoppingmall_ex
+# Django_Shoppingmall 과제 예제
 
 
 ## 서버 실행법 
