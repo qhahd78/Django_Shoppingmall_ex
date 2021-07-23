@@ -3,7 +3,7 @@
 
 ## 서버 실행법 
 1) 가상환경 생성 & 실행 
-- python -m venv [가상환경이름] -> . venv/Scripts/activate
+- python -m venv [가상환경이름] - . venv/Scripts/activate
 
 2) pip install pillow 
 
